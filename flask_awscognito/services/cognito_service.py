@@ -60,12 +60,13 @@ class CognitoService:
             response_json = response.json()
         except requests.exceptions.RequestException as e:
             raise FlaskAWSCognitoError(str(e)) from e
-        if "access_token" not in response_json:
-            raise FlaskAWSCognitoError(
-                f"no access token returned for code {response_json}"
-            )
-        access_token = response_json["access_token"]
-        return access_token
+        #if "access_token" not in response_json:
+        #    raise FlaskAWSCognitoError(
+        #        f"no access token returned for code {response_json}"
+        #    )
+        #access_token = response_json["access_token"]
+        print(response_json)
+        return response_json
 
     def get_user_info(self, access_token, requests_client=None):
         user_url = f"{self.domain}/oauth2/userInfo"
