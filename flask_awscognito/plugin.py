@@ -75,6 +75,10 @@ class AWSCognitoAuthentication:
         sign_in_url = self.cognito_service.get_sign_in_url()
         return sign_in_url
 
+    def get_logout_url(self):
+        logout_url = self.cognito_service.logout_url()
+        return logout_url
+
     def get_tokens(self, request_args):
         code = request_args.get("code")
         state = request_args.get("state")

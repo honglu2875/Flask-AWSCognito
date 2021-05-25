@@ -13,12 +13,12 @@ with open("README.md", "r") as fh:
 
 
 setup(
-    name="Flask-AWSCognito",
-    version="1.2",
-    url="https://github.com/cgauge/Flask-AWSCognito/",
+    name="Flask-AWSCognito-forked",
+    version="0.1",
+    url="https://github.com/honglu2875/Flask-AWSCognito",
     license="MIT",
     author="CustomerGauge",
-    author_email="python@customergauge.com",
+    author_email="python@customergauge.com, honglu2875@gmail.com",
     description="Authenticate users with AWS Cognito",
     long_description=long_description,
     long_description_content_type="text/markdown",

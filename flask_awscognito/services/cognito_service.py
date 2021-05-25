@@ -37,6 +37,18 @@ class CognitoService:
         )
         return full_url
 
+    def get_logout_url(self):
+        quoted_redirect_url = quote(self.redirect_url)
+        state = get_state(self.user_pool_id, self.user_pool_client_id)
+        full_url = (
+            f"{self.domain}/logout"
+            f"?response_type=code"
+            f"&client_id={self.user_pool_client_id}"
+            f"&redirect_uri={quoted_redirect_url}"
+            f"&state={state}"
+        )
+        return full_url
+
     def exchange_code_for_token(self, code, requests_client=None):
         token_url = f"{self.domain}/oauth2/token"
         data = {
@@ -60,12 +72,7 @@ class CognitoService:
             response_json = response.json()
         except requests.exceptions.RequestException as e:
             raise FlaskAWSCognitoError(str(e)) from e
-        #if "access_token" not in response_json:
-        #    raise FlaskAWSCognitoError(
-        #        f"no access token returned for code {response_json}"
-        #    )
-        #access_token = response_json["access_token"]
-        print(response_json)
+
         return response_json
 
     def get_user_info(self, access_token, requests_client=None):
