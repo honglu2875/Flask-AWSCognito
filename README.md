@@ -5,6 +5,12 @@
 
 Documentation https://flask-awscognito.readthedocs.io
 
+## FORKING NOTE:
+**it's a customized fork that fiddles with how the user tokens are returned from AWS Cognito. Only aiming for specific personal uses. I would be happy to chat with anything but please don't fork or clone this as it might be unstable.**
+
+--honglu
+
+
 ## Maintainer(s) Needed
 
 This project is in search for new maintainer(s). Please see [Issue #13](https://github.com/cgauge/Flask-AWSCognito/issues/13) for details.
