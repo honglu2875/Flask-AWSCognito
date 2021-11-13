@@ -11,6 +11,10 @@ Documentation https://flask-awscognito.readthedocs.io
 --honglu
 
 
+The original README of the package is below:
+
+---
+
 ## Maintainer(s) Needed
 
 This project is in search for new maintainer(s). Please see [Issue #13](https://github.com/cgauge/Flask-AWSCognito/issues/13) for details.
